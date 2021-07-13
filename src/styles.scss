@@ -1,0 +1,64 @@
+$color-green: #43C386;
+$color-dark-gray: #2e364f;
+$color-gray: #9CA0AD;
+$color-light-gray: #fafafa;
+$color-light-orange: #FFA500;
+$color-light-yellow: #ffe8cc;
+$color-orange: orangered;
+$color-yellow: #ff8a00;
+
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+  
+body {
+    margin: 20px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    color: $color-dark-gray;
+
+    .button {
+        background: $color-light-gray;
+        padding: 8px 15px;
+        margin: 0;
+        min-width: 50px;
+        outline: none;
+        border: none;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .button-light {
+        background: linear-gradient(to bottom right, $color-light-orange, $color-light-yellow);
+        color: $color-gray;
+
+        &:hover {
+            background: linear-gradient(to top left, $color-light-orange, $color-light-yellow);
+        }
+    }
+
+    .button-bright {
+        background: linear-gradient(to bottom right, $color-orange, $color-yellow);
+        color: white;
+
+        &:hover {
+            background: linear-gradient(to top left, $color-orange, $color-yellow);
+        }
+    }
+
+    .bold-text {
+        font-weight: bold;
+    }
+
+    .break-word {
+        word-break: break-word;
+    }
+}

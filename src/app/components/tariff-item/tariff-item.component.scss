@@ -1,0 +1,126 @@
+@import '../../../styles.scss';
+
+$tablet-max-width: 1024px;
+$mobile-max-width: 480px;
+$speed-labels-max-width: 600px;
+
+.tariff-item {
+    @include flexbox();
+    flex-wrap: wrap;
+    align-content: stretch;
+    background: white;
+    margin-bottom: 40px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 10px 0 rgba(132, 158, 178, .3);   
+    
+    .column {
+        &-tariff-id {
+            width: calc(5% - 20px);
+            padding: 10px;
+
+            @media screen and (max-width: $tablet-max-width) {
+                width: calc(10% - 20px);
+            }
+        }
+
+        &-tariff-id,
+        &-tariff-name {
+            @include flexbox();
+            align-items: center;
+
+            @media screen and (max-width: $tablet-max-width) {
+                align-items: flex-start;
+            }
+        }
+
+        &-tariff-name,
+        &-speeds {
+            width: calc(25% - 20px);
+            padding: 10px;
+
+            @media screen and (max-width: $tablet-max-width) {
+                width: calc(30% - 20px);
+            }    
+        }
+
+        &-price {
+            @include flexbox();
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: calc(15% - 20px);
+            padding: 10px;
+
+            @media screen and (max-width: $tablet-max-width) {
+                width: calc(30% - 20px);
+            }
+            
+            .price {
+                font-size: 2em;
+                margin-bottom: 10px;
+            
+                @media screen and (max-width: $mobile-max-width) {
+                    font-size: 1.5em;
+                }
+            }            
+        }
+
+        &-remarks {
+            width: calc(30% - 20px);
+            padding: 10px;
+
+            @media screen and (max-width: $tablet-max-width) {
+                display: none;
+            }
+
+            .check-sign {
+                padding-right: 5px;
+                color: $color-green;
+            }
+        }
+    }
+
+    .to-tariff {
+        @media screen and (max-width: $mobile-max-width) {
+            display: none;
+        }
+    }
+
+    .speed-block {
+        margin-top: 5px;
+
+        &.download-block {
+            margin-bottom: 10px;
+        }
+ 
+        .speed-icon {
+            background: linear-gradient(to bottom right, $color-light-orange, $color-light-yellow);
+            color: $color-gray;
+            padding: 5px 10px;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        .speed-label {
+            padding: 5px 30px 5px 20px;
+            background-color: $color-light-gray;
+            border-top-right-radius: 30px 15px;
+            border-bottom-right-radius: 30px 15px;
+            background-color: orange;
+
+            @media screen and (max-width: $speed-labels-max-width) {
+                padding: 0;
+            }        
+        }
+    }
+
+    .download-label,
+    .upload-label {
+        color: $color-gray;
+        margin-bottom: 5px;
+
+        @media screen and (max-width: $mobile-max-width) {
+            display: none;
+        } 
+    }
+}

@@ -1,0 +1,50 @@
+<div class="tariff-item">
+  <div class="column-tariff-id">
+      {{tariff.rank}}
+  </div>
+  <div class="column-tariff-name bold-text">
+    <img
+      src= {{tariff?.provider?.logoUrl}}
+    >
+    <span>{{tariff?.product?.content?.text}}</span> 
+  </div>
+  <div class="column-speeds">
+      <span class="download-label">Download</span>
+      <div class="speed-block download-block">
+          <span class="speed-icon">
+            <em class="fa fa-download"></em>
+          </span>
+          <span class="speed-label">{{tariff?.contractTerm?.downloadSpeed?.content?.text }} </span>
+      </div>
+      <span class="upload-label">Upload</span>
+      <div class="speed-block">
+          <span class="speed-icon">
+            <em class="fa fa-upload"></em>
+          </span>
+          <span class="speed-label">{{tariff?.contractTerm?.uploadSpeed?.content?.text}}</span>
+      </div>
+  </div>
+  <div class="column-remarks">
+      <div *ngFor="let remark of tariff.remarks">
+        <p>
+          <span class="check-sign">
+            <em class="fa fa-check"></em>
+          </span>
+            {{remark?.caption?.text}}
+        </p>
+      </div>
+  </div>
+  <div class="column-price">
+      <div class="bold-text price">
+        {{tariff?.cost?.effectiveCost?.amount | currency: 'EUR'}}
+      </div>
+      <div *ngIf =tariff?.signup?.responsive?.url>
+        <a href="{{tariff?.signup?.responsive?.url}}" target="_blank">
+          <button class="button button-bright" type="button" title="To tariff">
+            <span class="to-tariff">To tariff </span>  
+            <em class="fa fa-angle-right"></em>
+          </button>
+        </a>
+      </div>
+  </div>
+</div>

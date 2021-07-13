@@ -1,0 +1,18 @@
+@import '../../../styles.scss';
+
+$tablet-max-width: 1024px;
+$mobile-max-width: 480px;
+$speed-labels-max-width: 600px;
+
+.order-button-group {
+    align-items: center;
+    margin-bottom: 10px;
+
+    .button-sorting {
+        margin-right: 10px;
+    }
+}
+
+.tariffs-list {
+    word-break: break-word;
+}

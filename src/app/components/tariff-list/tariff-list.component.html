@@ -1,0 +1,16 @@
+<h3>Order by</h3>
+<div *ngFor="let sortableField of sortableFields">
+  <div class="order-button-group">
+    <button class="button button-light button-sorting" type="button" 
+          (click)="sortTariffs(sortableField.fieldName, 1)">{{sortableField.displayName}} &uarr;</button>
+    <button class="button button-light button-sorting" type="button"
+           (click)="sortTariffs(sortableField.fieldName, 2)">{{sortableField.displayName}} &darr;</button>
+  </div>
+</div>
+
+<h3>Tariffs</h3>
+<div class="tariffs-list">
+  <div *ngFor="let tariff of (tariffs$ | async)">
+    <app-tariff-item [tariff]="tariff"></app-tariff-item>
+  </div>
+</div>
