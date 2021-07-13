@@ -11,3 +11,4 @@ export class TariffItemComponent {
   @Input()
   public tariff: ITariff
 }
+
